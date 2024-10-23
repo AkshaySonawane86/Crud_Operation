@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="java.nio.file.Files"/>
+    <fullyQualifiedTypeName name="java.nio.file.Paths"/>
+    <fullyQualifiedTypeName name="java.nio.file.StandardOpenOption"/>
+</qualifiedTypeNameHistroy>

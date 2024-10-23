@@ -1,0 +1,15 @@
+spring.application.name=SpringApplication
+
+server.port=8081
+
+#database related configuration 
+spring.datasource.url=jdbc:mysql://localhost:3306/student
+spring.datasource.username=root
+spring.datasource.password=Akki0987
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+#hibernate related configuration 
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.generate-ddl=true
+spring.jpa.hibernate.ddl-auto=update
+

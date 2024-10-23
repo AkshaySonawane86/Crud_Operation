@@ -1,0 +1,20 @@
+package com.example.spring.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.spring.model.Student;
+import com.example.spring.repository.StudentRepository;
+import java.util.*;
+
+@Service("studentService")
+public class StudentService {
+
+	@Autowired
+	StudentRepository studentRepository;
+	
+	public List<Student> findAll()
+	{
+		return studentRepository.findAll();
+	}
+}

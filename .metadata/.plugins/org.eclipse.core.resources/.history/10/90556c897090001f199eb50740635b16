@@ -1,0 +1,16 @@
+package com.example.spring.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.spring.model.Student;
+
+import java.util.*;
+
+@RestController
+public class StudentController {
+
+	public List<Student> getAllStudent()
+	{
+		return null;
+	}
+}

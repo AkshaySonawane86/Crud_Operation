@@ -1,0 +1,23 @@
+package com.example.spring.service;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
+import org.springframework.stereotype.Service;
+
+import com.example.spring.model.Student;
+
+@Service
+public class StudentService {
+
+	private final String filePath = "C:/data/student.txt";
+	
+	public String addStudent(Student student) throws IOException
+	{
+		String studentData = student.getId()+","+student.getName()+","+student.getPercentage()+","+student.getBranch()+"/n";
+		Files.write(Paths.get(filePath), studentData.getBytes(), StandardOpenOption.APPEND);
+		return "Add successfully";
+	}
+}

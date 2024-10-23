@@ -1,0 +1,56 @@
+package com.example.spring.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.spring.model.Student;
+import com.example.spring.repository.StudentRepo;
+import com.example.spring.service.StudentService;
+
+import java.util.*;
+
+@RestController
+public class StudentController {
+	
+	@Autowired
+	StudentService studentService;
+	
+	@Autowired
+	StudentRepo repo;
+
+	//localhost:8081/students
+	@GetMapping("/students")
+	public List<Student> getAllStudent()
+	{
+//		List<Student> student=studentService.findAll();
+		List<Student> students=repo.findAll();
+		return students;
+	}
+	
+//	localhost:8082/students/1
+	@GetMapping("/students/{id}")
+	public Student getStudent(@PathVariable int id)
+	{
+		Student student=repo.findById(id).get();
+		return student;
+	}
+	
+//	localhost:8082/student/add
+	@PostMapping("/student/add")
+	public void createStudent(@RequestBody Student student)
+	{
+		repo.save(student);
+	}
+	
+	@PutMapping("/student/update/{id}")
+	public Student updateStudent(@PathVariable int id)
+	{
+		Student student=repo.findById(id);
+		student.getName("poonam");
+	}
+}
